@@ -1,0 +1,13 @@
+package ru.fvds.cdss13.lib.dto.utilmicroservice;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class NewResumeNotificationDto {
+    private String id;
+    private String username;
+}
