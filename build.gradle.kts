@@ -20,10 +20,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
-            artifactId = project.name
-            version = project.version.toString()
-            artifact(tasks["sourcesJar"])
-            artifact(tasks["javadocJar"])
+
         }
     }
 
