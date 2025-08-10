@@ -34,8 +34,8 @@ publishing {
             name = "lib-custom-dto" // A descriptive name for your repository
             url = uri("https://github.com/Uteam-TOP/lib-custom-dto") // URL of your remote repository
             credentials {
-                username = "Uteam-TOP" // Get username from environment variable
-                password = "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" // Get password from environment variable
+                username = System.getenv("GITHUB_USERNAME") // Get username from environment variable
+                password = System.getenv("GITHUB_PASSWORD")
             }
         }
     }
