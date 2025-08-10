@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.fvds.cdss13.lib"
-version = "0.0.3-SNAPSHOT"
+version = "0.0.6-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -29,8 +29,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/Uteam-TOP/lib-custom-dto")
             credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+                username = "Uteam-TOP"
+                password = "707S13a062Iu63"
             }
         }
     }
