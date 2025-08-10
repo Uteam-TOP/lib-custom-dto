@@ -33,10 +33,7 @@ publishing {
         maven {
             name = "lib-custom-dto" // A descriptive name for your repository
             url = uri("https://github.com/uteam-top/lib-custom-dto") // URL of your remote repository
-            credentials {
-                username = System.getenv("GITHUB_USERNAME") // Get username from environment variable
-                password = System.getenv("GITHUB_PASSWORD")
-            }
+
         }
     }
 }
