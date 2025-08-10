@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.fvds.cdss13.lib"
-version = "0.0.6-SNAPSHOT"
+version = "0.0.7-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -29,8 +29,10 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/Uteam-TOP/lib-custom-dto")
             credentials {
-                username = "Uteam-TOP"
-                password = "707S13a062Iu63"
+                  username = project.findProperty("gpr.user")?.toString()
+                                     ?: throw GradleException("Set 'gpr.user' in gradle.properties")
+                  password = project.findProperty("gpr.key")?.toString()
+                                     ?: throw GradleException("Set 'gpr.key' in gradle.properties")
             }
         }
     }
