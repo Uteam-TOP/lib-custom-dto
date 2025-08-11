@@ -3,7 +3,7 @@ package ru.fvds.cdss13.lib.dto;
 import lombok.Getter;
 
 @Getter
-public enum ForumTopic {
+public enum TelegramForumTopic {
     GENERAL("-1002326002578", "1", "General"),
     LOGI_BECK("-1002326002578", "2", "Логи фронтенда"),
     LOGI_FRONT("-1002326002578", "6", "Логи бэкэнда"),
@@ -13,7 +13,7 @@ public enum ForumTopic {
     String messageThreadId;
     String description;
 
-    ForumTopic(String chatId, String messageThreadId, String description) {
+    TelegramForumTopic(String chatId, String messageThreadId, String description) {
         this.chatId = chatId;
         this.messageThreadId = messageThreadId;
         this.description = description;
