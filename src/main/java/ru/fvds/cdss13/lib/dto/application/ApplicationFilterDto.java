@@ -1,13 +1,13 @@
 package ru.fvds.cdss13.lib.dto.application;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class ApplicationFilterDto {
 
     private Boolean resumeOwnerBanned;

@@ -1,8 +1,6 @@
 package ru.fvds.cdss13.lib.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
 import java.util.Map;
@@ -10,6 +8,8 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class RequestInfoDto {
     private String method;
     private String details;

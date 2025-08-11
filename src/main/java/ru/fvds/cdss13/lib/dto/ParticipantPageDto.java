@@ -2,6 +2,10 @@ package ru.fvds.cdss13.lib.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.lang.Nullable;
 
 import javax.xml.validation.Schema;
@@ -12,10 +16,10 @@ import java.util.Objects;
 /**
  * ParticipantPageDto
  */
-@lombok.NoArgsConstructor
-@lombok.AllArgsConstructor
-@lombok.experimental.FieldNameConstants(innerTypeName = "F")
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 public class ParticipantPageDto {
 
   @Valid

@@ -6,7 +6,9 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 
@@ -19,6 +21,8 @@ import java.util.Objects;
  */
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class TeamDto {
 
   private @Nullable Long id;

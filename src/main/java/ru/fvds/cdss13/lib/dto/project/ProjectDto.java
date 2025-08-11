@@ -5,11 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.FieldNameConstants;
-import ru.fvds.cdss13.lib.dto.ad.VacancyDto;
+import lombok.*;
+import ru.fvds.cdss13.lib.dto.ad.AdDto;
 import ru.fvds.cdss13.lib.dto.city.CityDto;
 import ru.fvds.cdss13.lib.dto.teammember.TeamMemberDto;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
@@ -20,7 +17,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@FieldNameConstants(innerTypeName = "F")
+@Setter
+@Getter
 public class ProjectDto {
 
     private Long id;
@@ -67,7 +65,7 @@ public class ProjectDto {
     private OffsetDateTime createdAt;
 
     @Valid
-    private List<VacancyDto> vacancies;
+    private List<AdDto> vacancies;
 
     @Valid
     private UserDto owner;

@@ -2,9 +2,7 @@ package ru.fvds.cdss13.lib.dto.ad;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import ru.fvds.cdss13.lib.dto.tag.TagDto;
 import ru.fvds.cdss13.lib.dto.user.EmploymentStatus;
 import ru.fvds.cdss13.lib.dto.user.Gender;
@@ -16,6 +14,8 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class AdFilterDto {
     private String searchText;
     private Long userId;

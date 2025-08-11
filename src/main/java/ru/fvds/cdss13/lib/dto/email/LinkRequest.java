@@ -2,6 +2,8 @@ package ru.fvds.cdss13.lib.dto.email;
 
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
@@ -11,6 +13,8 @@ import java.io.Serializable;
  */
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Setter
+@Getter
 public class LinkRequest implements Serializable {
     /**
      * email пользователя

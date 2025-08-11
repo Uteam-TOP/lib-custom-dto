@@ -4,18 +4,17 @@ package ru.fvds.cdss13.lib.dto.application;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldNameConstants;
-import ru.fvds.cdss13.lib.dto.ad.ResumeDto;
+import ru.fvds.cdss13.lib.dto.ad.AdDto;
 
 import java.time.OffsetDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@FieldNameConstants(innerTypeName = "F")
+@Setter
+@Getter
 public class ApplicationDto {
 
     private Long id;
@@ -27,5 +26,5 @@ public class ApplicationDto {
     private OffsetDateTime createdAt;
 
     @Valid
-    private ResumeDto resume;
+    private AdDto resume;
 }

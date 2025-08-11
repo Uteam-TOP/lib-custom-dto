@@ -4,9 +4,7 @@ package ru.fvds.cdss13.lib.dto.teammember;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldNameConstants;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
 
@@ -15,7 +13,8 @@ import java.time.OffsetDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@FieldNameConstants(innerTypeName = "F")
+@Setter
+@Getter
 public class TeamMemberDto {
     private Long id;
 

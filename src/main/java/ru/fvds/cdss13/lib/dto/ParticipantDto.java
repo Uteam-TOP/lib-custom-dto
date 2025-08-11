@@ -5,7 +5,9 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
@@ -19,6 +21,8 @@ import java.util.Objects;
  */
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class ParticipantDto {
 
   private @Nullable Long id;

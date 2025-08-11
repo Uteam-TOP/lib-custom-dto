@@ -1,12 +1,12 @@
 package ru.fvds.cdss13.lib.dto.utilmicroservice;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class NewUserNotificationDto {
     private String username;
 }

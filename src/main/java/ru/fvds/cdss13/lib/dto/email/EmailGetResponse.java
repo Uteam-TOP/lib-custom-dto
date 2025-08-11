@@ -7,6 +7,9 @@ import java.io.Serializable;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@NoArgsConstructor
+@Setter
+@Getter
 public class EmailGetResponse implements Serializable {
     String status;
 

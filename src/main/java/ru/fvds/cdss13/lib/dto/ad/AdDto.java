@@ -68,4 +68,6 @@ public class AdDto {
         tags.addAll(motivations);
         return tags;
     }
+
+
 }

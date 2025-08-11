@@ -1,14 +1,14 @@
 package ru.fvds.cdss13.lib.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 public class ErrorResponseDto {
 
     private int httpStatus;
