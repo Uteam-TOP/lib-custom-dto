@@ -1,6 +1,7 @@
 plugins {
     java
     id("maven-publish")
+    idea
 }
 
 group = "ru.fvds.cdss13.lib"
@@ -38,6 +39,11 @@ publishing {
     }
 }
 
+idea {
+    module {
+        isDownloadSources = true
+    }
+}
 
 dependencies {
     compileOnly("org.projectlombok:lombok:1.18.24")
