@@ -18,10 +18,7 @@ import java.util.Objects;
 /**
  * HackathonRequestDto
  */
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+
 public class HackathonRequestDto {
 
   private @Nullable String ownerNickname;

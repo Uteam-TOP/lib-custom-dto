@@ -1,14 +1,23 @@
 package ru.fvds.cdss13.lib.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-@Data
-@AllArgsConstructor
-@Setter
-@Getter
+
+
 public class MessageResponse {
     private String message;
+
+    public MessageResponse() {
+    }
+
+    public MessageResponse(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

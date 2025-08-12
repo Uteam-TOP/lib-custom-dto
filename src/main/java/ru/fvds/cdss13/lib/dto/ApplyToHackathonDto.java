@@ -13,10 +13,7 @@ import java.util.Objects;
 /**
  * ApplyToHackathonDto
  */
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+
 public class ApplyToHackathonDto {
 
   private @Nullable Long projectId;

@@ -16,10 +16,7 @@ import java.util.Objects;
 /**
  * TeamPageDto
  */
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+
 public class TeamPageDto {
 
   @Valid

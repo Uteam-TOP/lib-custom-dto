@@ -1,14 +1,10 @@
 package ru.fvds.cdss13.lib.dto;
 
-import lombok.*;
+
 
 import java.time.Instant;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
-@Getter
+
 public class ErrorResponseDto {
 
     private int httpStatus;
@@ -36,5 +32,62 @@ public class ErrorResponseDto {
         this.timestamp = Instant.now();
     }
 
+    public ErrorResponseDto() {
+    }
 
+    public int getHttpStatus() {
+        return httpStatus;
+    }
+
+    public void setHttpStatus(int httpStatus) {
+        this.httpStatus = httpStatus;
+    }
+
+    public String getUserMessage() {
+        return userMessage;
+    }
+
+    public void setUserMessage(String userMessage) {
+        this.userMessage = userMessage;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public String getException() {
+        return exception;
+    }
+
+    public void setException(String exception) {
+        this.exception = exception;
+    }
+
+    public Instant getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Instant timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getStackTrace() {
+        return stackTrace;
+    }
+
+    public void setStackTrace(String stackTrace) {
+        this.stackTrace = stackTrace;
+    }
+
+    public RequestInfoDto getRequestInfo() {
+        return requestInfo;
+    }
+
+    public void setRequestInfo(RequestInfoDto requestInfo) {
+        this.requestInfo = requestInfo;
+    }
 }

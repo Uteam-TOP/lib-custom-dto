@@ -1,19 +1,26 @@
 package ru.fvds.cdss13.lib.dto.email;
 
-import lombok.*;
-import lombok.experimental.FieldDefaults;
+
 
 import java.io.Serializable;
 
-@Data
-@FieldDefaults(level = AccessLevel.PRIVATE)
-@NoArgsConstructor
-@Setter
-@Getter
+
 public class EmailGetResponse implements Serializable {
-    String status;
+    private String status;
 
     public EmailGetResponse(String status) {
+        this.status = status;
+    }
+
+    public EmailGetResponse() {
+
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
         this.status = status;
     }
 }

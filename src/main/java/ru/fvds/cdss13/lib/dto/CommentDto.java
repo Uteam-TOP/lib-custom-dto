@@ -1,17 +1,12 @@
 package ru.fvds.cdss13.lib.dto;
 
-import lombok.*;
-import lombok.experimental.FieldNameConstants;
+
 import ru.fvds.cdss13.lib.dto.project.ProjectDto;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
 
 import java.time.OffsetDateTime;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
-@Getter
+
 public class CommentDto {
 
     private Long id;
@@ -21,4 +16,63 @@ public class CommentDto {
     private OffsetDateTime updatedAt;
     private ProjectDto project;
     private UserDto author;
+
+    public CommentDto() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public ProjectDto getProject() {
+        return project;
+    }
+
+    public void setProject(ProjectDto project) {
+        this.project = project;
+    }
+
+    public UserDto getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(UserDto author) {
+        this.author = author;
+    }
 }

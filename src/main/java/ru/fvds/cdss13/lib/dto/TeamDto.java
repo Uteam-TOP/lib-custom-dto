@@ -19,10 +19,7 @@ import java.util.Objects;
 /**
  * TeamDto
  */
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+
 public class TeamDto {
 
   private @Nullable Long id;

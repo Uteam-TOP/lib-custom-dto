@@ -4,17 +4,11 @@ package ru.fvds.cdss13.lib.dto.teammember;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Size;
-import lombok.*;
-import lombok.experimental.FieldNameConstants;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
 
 import java.time.OffsetDateTime;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
-@Getter
+
 public class TeamMemberDto {
     private Long id;
 
@@ -26,4 +20,39 @@ public class TeamMemberDto {
 
     @Valid
     private UserDto user;
+
+    public TeamMemberDto() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public UserDto getUser() {
+        return user;
+    }
+
+    public void setUser(UserDto user) {
+        this.user = user;
+    }
 }

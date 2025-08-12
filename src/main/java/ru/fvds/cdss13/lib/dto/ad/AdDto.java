@@ -6,9 +6,6 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import ru.fvds.cdss13.lib.dto.project.ProjectDto;
 import ru.fvds.cdss13.lib.dto.tag.TagDto;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
@@ -17,9 +14,7 @@ import java.time.OffsetDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class AdDto {
 
     private Long id;
@@ -69,5 +64,102 @@ public class AdDto {
         return tags;
     }
 
+    public AdDto() {
+    }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public UserDto getUser() {
+        return user;
+    }
+
+    public void setUser(UserDto user) {
+        this.user = user;
+    }
+
+    public TagDto getProfession() {
+        return profession;
+    }
+
+    public void setProfession(TagDto profession) {
+        this.profession = profession;
+    }
+
+    public Set<TagDto> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Set<TagDto> skills) {
+        this.skills = skills;
+    }
+
+    public Set<TagDto> getMotivations() {
+        return motivations;
+    }
+
+    public void setMotivations(Set<TagDto> motivations) {
+        this.motivations = motivations;
+    }
+
+    public Integer getMinPayment() {
+        return minPayment;
+    }
+
+    public void setMinPayment(Integer minPayment) {
+        this.minPayment = minPayment;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public VisibilityLevel getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(VisibilityLevel visibility) {
+        this.visibility = visibility;
+    }
+
+    public OffsetDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(OffsetDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public String getBanReason() {
+        return banReason;
+    }
+
+    public void setBanReason(String banReason) {
+        this.banReason = banReason;
+    }
+
+    public ProjectDto getProjectDto() {
+        return projectDto;
+    }
+
+    public void setProjectDto(ProjectDto projectDto) {
+        this.projectDto = projectDto;
+    }
 }

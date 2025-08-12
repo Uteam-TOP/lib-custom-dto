@@ -16,10 +16,7 @@ import java.util.Objects;
 /**
  * ParticipantPageDto
  */
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+
 public class ParticipantPageDto {
 
   @Valid

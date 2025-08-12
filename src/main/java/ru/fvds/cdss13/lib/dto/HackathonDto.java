@@ -21,10 +21,7 @@ import java.util.Objects;
 /**
  * HackathonDto
  */
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+
 public class HackathonDto {
 
   private @Nullable Long id;
