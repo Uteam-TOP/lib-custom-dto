@@ -1,11 +1,10 @@
 plugins {
     java
     id("maven-publish")
-    idea
 }
 
 group = "ru.fvds.cdss13.lib"
-version = "0.0.17-SNAPSHOT"
+version = "0.0.18-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -39,11 +38,7 @@ publishing {
     }
 }
 
-idea {
-    module {
-        isDownloadSources = true
-    }
-}
+
 
 dependencies {
     compileOnly("org.projectlombok:lombok:1.18.24")
