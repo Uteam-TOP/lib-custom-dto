@@ -1,22 +1,23 @@
 package ru.fvds.cdss13.lib.exception;
 
-import org.springframework.http.HttpStatus;
+
 
 public class BusinessException extends AbstractOpenApiException {
 
-    public BusinessException(HttpStatus httpStatus, String message) {
-        super(String.valueOf(httpStatus.value()), message);
+
+    protected BusinessException(String httpStatus, String message) {
+        super(httpStatus, message);
     }
 
-    public BusinessException(HttpStatus httpStatus, String message, Throwable cause) {
-        super(String.valueOf(httpStatus.value()), message, cause);
+    protected BusinessException(String httpStatus, String message, String userMessage) {
+        super(httpStatus, message, userMessage);
     }
 
-    public BusinessException(HttpStatus httpStatus, String message, String userMessage) {
-        super(String.valueOf(httpStatus.value()), message, userMessage);
+    protected BusinessException(String httpStatus, String message, Throwable cause) {
+        super(httpStatus, message, cause);
     }
 
-    public BusinessException(HttpStatus httpStatus, String message, String userMessage, Throwable cause) {
-        super(String.valueOf(httpStatus.value()), message, userMessage, cause);
+    protected BusinessException(String httpStatus, String message, String userMessage, Throwable cause) {
+        super(httpStatus, message, userMessage, cause);
     }
 }

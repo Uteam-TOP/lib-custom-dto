@@ -15,8 +15,7 @@ import org.springframework.http.HttpStatus;
  * <br>
  * Такой костыль нужен, чтобы не хордкодить код и описание в open api, а ссылаться на исключения.
  */
-@Getter
-@Setter
+
 public abstract class AbstractOpenApiException extends RuntimeException {
 
     private HttpStatus httpStatus;
@@ -59,6 +58,22 @@ public abstract class AbstractOpenApiException extends RuntimeException {
     protected AbstractOpenApiException(String httpStatus, String message, String userMessage, Throwable cause) {
         super(message, cause);
         this.httpStatus = HttpStatus.valueOf(Integer.parseInt(httpStatus));
+        this.userMessage = userMessage;
+    }
+
+    public HttpStatus getHttpStatus() {
+        return httpStatus;
+    }
+
+    public void setHttpStatus(HttpStatus httpStatus) {
+        this.httpStatus = httpStatus;
+    }
+
+    public String getUserMessage() {
+        return userMessage;
+    }
+
+    public void setUserMessage(String userMessage) {
         this.userMessage = userMessage;
     }
 }
