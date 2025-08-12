@@ -50,9 +50,7 @@ public class AdDto {
     private String banReason;
 
     @JsonIgnore
-    public AdType getAdType() {
-        throw new RuntimeException("Тип объявления не задан");
-    }
+    private AdType adType;
 
     private ProjectDto projectDto;
 
@@ -161,5 +159,17 @@ public class AdDto {
 
     public void setProjectDto(ProjectDto projectDto) {
         this.projectDto = projectDto;
+    }
+
+    public AdType getAdType() {
+        return adType;
+    }
+
+    public void setAdType(AdType adType) {
+        this.adType = adType;
+    }
+
+    public AdDto(AdType adType) {
+        this.adType = adType;
     }
 }

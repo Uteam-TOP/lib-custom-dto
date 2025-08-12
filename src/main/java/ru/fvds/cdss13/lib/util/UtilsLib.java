@@ -8,5 +8,7 @@ public final class UtilsLib {
         return String.format("%s_%s", prefix, dto.getCanonicalName());
     }
 
-
+    public static String createTopic(Class<?> dto, String prefix){
+        return String.format("%s_%s", prefix, dto.getCanonicalName());
+    }
 }
