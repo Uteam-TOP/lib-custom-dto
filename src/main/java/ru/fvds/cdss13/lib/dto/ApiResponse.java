@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ApiResponse<Dto> {
 
     private boolean success;
+    private String code;
     private String message;
     private Dto data;  // Обобщенный тип для полезной нагрузки
 
@@ -34,5 +35,13 @@ public class ApiResponse<Dto> {
     }
 
     public ApiResponse() {
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
