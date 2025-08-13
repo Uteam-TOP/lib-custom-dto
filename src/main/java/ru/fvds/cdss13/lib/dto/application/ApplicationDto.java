@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Size;
 import ru.fvds.cdss13.lib.dto.ad.AdDto;
+import ru.fvds.cdss13.lib.dto.project.ProjectDto;
 
 import java.time.OffsetDateTime;
 
@@ -18,6 +19,7 @@ public class ApplicationDto {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime createdAt;
+    private ProjectDto projectDto;
 
     @Valid
     private AdDto resume;
@@ -55,5 +57,13 @@ public class ApplicationDto {
 
     public void setResume(AdDto resume) {
         this.resume = resume;
+    }
+
+    public ProjectDto getProjectDto() {
+        return projectDto;
+    }
+
+    public void setProjectDto(ProjectDto projectDto) {
+        this.projectDto = projectDto;
     }
 }

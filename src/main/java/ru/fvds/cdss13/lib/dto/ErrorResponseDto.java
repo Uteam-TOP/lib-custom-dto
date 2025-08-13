@@ -8,21 +8,22 @@ import java.time.Instant;
 public class ErrorResponseDto {
 
     private int httpStatus;
-
-
     private String userMessage;
-
-
     private String details;
-
     private String exception;
-
     private Instant timestamp;
-
     private String stackTrace;
-
-
     private RequestInfoDto requestInfo;
+
+    public ErrorResponseDto(int httpStatus, String userMessage, String details, String exception, Instant timestamp, String stackTrace, RequestInfoDto requestInfo) {
+        this.httpStatus = httpStatus;
+        this.userMessage = userMessage;
+        this.details = details;
+        this.exception = exception;
+        this.timestamp = timestamp;
+        this.stackTrace = stackTrace;
+        this.requestInfo = requestInfo;
+    }
 
     public ErrorResponseDto(int httpStatus, String userMessage, String details, String exception) {
         this.httpStatus = httpStatus;
