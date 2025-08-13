@@ -17,6 +17,16 @@ public class RequestInfoDto {
     public RequestInfoDto() {
     }
 
+    public RequestInfoDto(String method, String details, String userId, Map<String, String[]> params, Map<String, String[]> headers, String body, Instant timestamp) {
+        this.method = method;
+        this.details = details;
+        this.userId = userId;
+        this.params = params;
+        this.headers = headers;
+        this.body = body;
+        this.timestamp = timestamp;
+    }
+
     public String getMethod() {
         return method;
     }
