@@ -4,6 +4,7 @@ package ru.fvds.cdss13.lib.dto.teammember;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Size;
+import ru.fvds.cdss13.lib.dto.project.ProjectDto;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
 
 import java.time.OffsetDateTime;
@@ -17,6 +18,8 @@ public class TeamMemberDto {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime createdAt;
+
+    private ProjectDto projectDto;
 
     @Valid
     private UserDto user;
@@ -54,5 +57,13 @@ public class TeamMemberDto {
 
     public void setUser(UserDto user) {
         this.user = user;
+    }
+
+    public ProjectDto getProjectDto() {
+        return projectDto;
+    }
+
+    public void setProjectDto(ProjectDto projectDto) {
+        this.projectDto = projectDto;
     }
 }
