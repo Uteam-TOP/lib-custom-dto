@@ -20,11 +20,11 @@ jobs:
         run: chmod +x gradlew
 
       - name: Publish
-          env:
-            GPR_USER: ${{ secrets.GPR_USERNAME }}
-            GPR_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
-          run: |
-            ./gradlew publish \
-              -Pgpr.user=$GPR_USER \
-              -Pgpr.key=$GPR_TOKEN \
-              --stacktrace
+        env:
+          GPR_USER: ${{ secrets.GPR_USERNAME }}
+          GPR_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+        run: |
+          ./gradlew publish \
+            -Pgpr.user=$GPR_USER \
+            -Pgpr.key=$GPR_TOKEN \
+            --stacktrace
