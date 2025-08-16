@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.fvds.cdss13.lib"
-version = "0.0.33-SNAPSHOT"
+version = "0.0.34"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -22,7 +22,7 @@ publishing {
             from(components["java"])
             groupId = "ru.fvds.cdss13.lib"
             artifactId = "lib-custom-dto"
-            version = "0.0.33-SNAPSHOT"
+            version = "0.0.34-SNAPSHOT"
         }
     }
 
