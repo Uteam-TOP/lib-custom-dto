@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
+import ru.fvds.cdss13.lib.dto.user.UserDto;
 
 import javax.xml.validation.Schema;
 import java.time.OffsetDateTime;
@@ -61,6 +62,8 @@ public class HackathonRequestDto {
   private @Nullable String telegram;
 
   private RegistrationStatus registrationStatus;
+
+  private UserDto user;
 
   /**
    * Constructor with only required parameters

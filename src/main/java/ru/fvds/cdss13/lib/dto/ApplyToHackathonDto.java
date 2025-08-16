@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.Nullable;
+import ru.fvds.cdss13.lib.dto.ad.AdDto;
 
 import javax.xml.validation.Schema;
 import java.util.Objects;
@@ -18,7 +19,7 @@ public class ApplyToHackathonDto {
 
   private @Nullable Long projectId;
 
-  private @Nullable Long resumeId;
+  private @Nullable AdDto resume;
 
   public ApplyToHackathonDto projectId(Long projectId) {
     this.projectId = projectId;
@@ -39,8 +40,8 @@ public class ApplyToHackathonDto {
     this.projectId = projectId;
   }
 
-  public ApplyToHackathonDto resumeId(Long resumeId) {
-    this.resumeId = resumeId;
+  public ApplyToHackathonDto resumeId(AdDto resume) {
+    this.resume = resume;
     return this;
   }
 
@@ -49,13 +50,13 @@ public class ApplyToHackathonDto {
    * @return resumeId
    */
   
- @JsonProperty("resumeId")
-  public Long getResumeId() {
-    return resumeId;
+ @JsonProperty("resume")
+  public AdDto getResume() {
+    return resume;
   }
 
-  public void setResumeId(Long resumeId) {
-    this.resumeId = resumeId;
+  public void setResume(AdDto resume) {
+    this.resume = resume;
   }
 
   @Override
@@ -68,12 +69,12 @@ public class ApplyToHackathonDto {
     }
     ApplyToHackathonDto applyToHackathonDto = (ApplyToHackathonDto) o;
     return Objects.equals(this.projectId, applyToHackathonDto.projectId) &&
-        Objects.equals(this.resumeId, applyToHackathonDto.resumeId);
+        Objects.equals(this.resume, applyToHackathonDto.resume);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(projectId, resumeId);
+    return Objects.hash(projectId, resume);
   }
 
   @Override
@@ -81,7 +82,7 @@ public class ApplyToHackathonDto {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApplyToHackathonDto {\n");
     sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-    sb.append("    resumeId: ").append(toIndentedString(resumeId)).append("\n");
+    sb.append("    resumeId: ").append(toIndentedString(resume)).append("\n");
     sb.append("}");
     return sb.toString();
   }
