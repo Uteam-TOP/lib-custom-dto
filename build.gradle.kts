@@ -22,7 +22,7 @@ publishing {
             from(components["java"])
             groupId = "ru.fvds.cdss13.lib"
             artifactId = "lib-custom-dto"
-            version = "0.0.32-SNAPSHOT"
+            version = "0.0.33-SNAPSHOT"
         }
     }
 
