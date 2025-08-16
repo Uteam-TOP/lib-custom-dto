@@ -7,6 +7,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write  # Критически важно!
     steps:
       - uses: actions/checkout@v4
 
@@ -15,16 +18,19 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: 'gradle'
 
       - name: Make gradlew executable
         run: chmod +x gradlew
 
       - name: Publish
         env:
-          GPR_USER: ${{ secrets.GPR_USERNAME }}
-          GPR_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          GPR_USER: ${{ github.actor }}
+          GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ./gradlew publish \
             -Pgpr.user=$GPR_USER \
             -Pgpr.key=$GPR_TOKEN \
-            --stacktrace
+            --no-daemon \
+            --stacktrace \
+            --info
