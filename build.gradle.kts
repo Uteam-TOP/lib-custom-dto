@@ -20,8 +20,9 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
-            artifactId = project.name // Без ${}
-            version = version.toString()
+            groupId = "ru.fvds.cdss13.lib"
+            artifactId = "lib-custom-dto"
+            version = "0.0.32-SNAPSHOT"
         }
     }
 
