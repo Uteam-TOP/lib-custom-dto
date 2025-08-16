@@ -27,15 +27,13 @@ publishing {
 
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Uteam-TOP/lib-custom-dto")
-            credentials {
-                  username = project.findProperty("gpr.user")?.toString()
-                                     ?: throw GradleException("Set 'gpr.user' in gradle.properties")
-                  password = project.findProperty("gpr.key")?.toString()
-                                     ?: throw GradleException("Set 'gpr.key' in gradle.properties")
-            }
-        }
+                    name = "GitHubPackages"
+                    url = uri("https://maven.pkg.github.com/Uteam-TOP/lib-custom-dto")
+                    credentials {
+                        username = System.getenv("GITHUB_ACTOR") ?: "Uteam-TOP" // Ваш GitHub username или org name
+                        password = System.getenv("GITHUB_TOKEN") ?: ""
+                    }
+                }
     }
 }
 
