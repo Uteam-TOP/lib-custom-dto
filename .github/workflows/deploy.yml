@@ -24,4 +24,4 @@ jobs:
           GPR_USER: ${{ secrets.GPR_USER }}
           GITHUB_TOKEN: ${{ secrets.GPR_TOKEN }}
         run: |
-          ./gradlew publish
+          ./gradlew publish -Pgpr.user=$GPR_USER
