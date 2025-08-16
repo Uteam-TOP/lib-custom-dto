@@ -22,7 +22,7 @@ jobs:
       - name: Publish
         env:
           GPR_USER: ${{ secrets.GPR_USERNAME }}
-          GPR_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+          GPR_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           ./gradlew publish \
             -Pgpr.user=$GPR_USER \
