@@ -19,9 +19,12 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
 
-      - name: Publish to GitHub Packages
-        env:
-          GPR_USER: ${{ secrets.GPR_USER }}
-          GITHUB_TOKEN: ${{ secrets.GPR_TOKEN }}
-        run: |
-          ./gradlew publish -Pgpr.user=$GPR_USER
+      - name: Publish
+          env:
+            GPR_USER: ${{ secrets.GPR_USERNAME }}
+            GPR_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+          run: |
+            ./gradlew publish \
+              -Pgpr.user=$GPR_USER \
+              -Pgpr.key=$GPR_TOKEN \
+              --stacktrace
