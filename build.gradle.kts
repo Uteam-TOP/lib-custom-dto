@@ -20,7 +20,8 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
-
+            artifactId = project.name // Без ${}
+            version = version.toString()
         }
     }
 
