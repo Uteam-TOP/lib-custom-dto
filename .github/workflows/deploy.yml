@@ -25,12 +25,10 @@ jobs:
 
       - name: Publish
         env:
-          GPR_USER: ${{ github.actor }}
-          GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
         run: |
           ./gradlew publish \
-            -Pgpr.user=$GPR_USER \
-            -Pgpr.key=$GPR_TOKEN \
+            -Pgpr.user=${{ github.repository_owner }} \
+            -Pgpr.key=${{ secrets.GH_PACKAGES_TOKEN }} \
             --no-daemon \
-            --stacktrace \
-            --info
+            --stacktrace
