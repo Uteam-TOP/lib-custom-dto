@@ -1,5 +1,15 @@
 package ru.fvds.cdss13.lib.dto;
 
 public enum EventPrefix {
-    CREATE, UPDATE, DELETE, ALL, ALL_FILTER, FILTER, GET_BY, REQUEST, RESPONSE, BAN, UN_BAN
+    CREATE_,
+    UPDATE_,
+    DELETE_,
+    ALL_,
+    ALL_FILTER_,
+    FILTER_,
+    GET_BY_,
+    REQUEST_,
+    RESPONSE_,
+    BAN_,
+    UN_BAN_
 }
