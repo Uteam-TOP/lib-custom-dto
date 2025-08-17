@@ -1,26 +1,26 @@
 package ru.fvds.cdss13.lib.util;
 
-public class KafkaUtil<Dto> {
+public class KafkaUtil {
 
-    private Dto dto;
+    private Object dto;
     private String prefix;
     private String topic;
 
-    private KafkaUtil(Dto dto, String prefix) {
+    private KafkaUtil(Object dto, String prefix) {
         this.dto = dto;
         this.prefix = prefix;
         this.topic = prefix.formatted(dto.getClass().getCanonicalName());
     }
 
-    public KafkaUtil<Dto> createTopic(Dto dto, String prefix){
-        return new KafkaUtil<Dto>(dto, prefix);
+    public static KafkaUtil createTopic(Object dto, String prefix){
+        return new KafkaUtil(dto, prefix);
     }
 
-    public Dto getDto() {
+    public Object getDto() {
         return dto;
     }
 
-    public void setDto(Dto dto) {
+    public void setDto(Object dto) {
         this.dto = dto;
     }
 
