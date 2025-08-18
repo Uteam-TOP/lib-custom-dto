@@ -38,7 +38,7 @@ public class KafkaProducerService<Dto> {
      * @param topic
      * @return
      */
-    public ConsumerRecord<String, Dto> sendToResponse(Dto dto, String topic, Headers headers) {
+    public ConsumerRecord<String, Dto> sendToResponse(Dto dto, String topic, String receivedTopic, Headers headers) {
         String uuid = UUID.randomUUID().toString();
         ProducerRecord<String, Dto> producerRecord = new ProducerRecord<>(
                 topic,
@@ -48,7 +48,7 @@ public class KafkaProducerService<Dto> {
                 headers
         );
         producer.send(producerRecord);
-        ConsumerRecord<String, Dto> result = kafkaConsumerService.pollMessages(producerRecord);
+        ConsumerRecord<String, Dto> result = kafkaConsumerService.pollMessages(producerRecord, receivedTopic);
         logger.info("sendToResponse topic {}", topic);
         if (result == null){
             throw new BusinessException("403", "Not found");

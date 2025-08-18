@@ -41,13 +41,13 @@ public class KafkaConsumerService<Dto>{
      * Polls messages from Kafka topic indefinitely.
      */
     @Nullable
-    public ConsumerRecord<String, Dto> pollMessages(ProducerRecord<String,Dto> producerRecord) {
+    public ConsumerRecord<String, Dto> pollMessages(ProducerRecord<String,Dto> producerRecord, String receivedTopic) {
         boolean isProcess = true;
         ConsumerRecord<String, Dto> consumerRecord = null;
         try {
             while (isProcess) {
                 Iterable<ConsumerRecord<String, Dto>> records = consumer.poll(Duration.ofMillis(100))
-                        .records(producerRecord.topic());
+                        .records(receivedTopic);
                 for (ConsumerRecord<String, Dto> result : records) {
                     if (result.key().equals(producerRecord.key())) {
                         consumerRecord = result;
@@ -56,7 +56,7 @@ public class KafkaConsumerService<Dto>{
                     }
                 }
             }
-            logger.info("send kafka topic {}", producerRecord.topic());
+            logger.info("send kafka topic {} receivedTopic {}", producerRecord.topic(), receivedTopic);
         } catch (Exception e){
             throw new BusinessException("500", "ERROR kafka");
         }

@@ -22,4 +22,9 @@ spring:
     consumers:
       - ru.fvds.cdss13.lib.dto.ad.AdDto
       - ru.fvds.cdss13.lib.dto.ad.AdFilterDto
+      - ru.fvds.cdss13.lib.dto.ad.RequestAdsAllDto_AdDto
+      - ru.fvds.cdss13.lib.dto.ad.RequestCityAllDto_CityDto
+      - ru.fvds.cdss13.lib.dto.ad.RequestTagAllDto_TagDto
+      - ru.fvds.cdss13.lib.dto.project.ProjectDto_Ads
+      - ru.fvds.cdss13.lib.dto.tag.TagDto
 

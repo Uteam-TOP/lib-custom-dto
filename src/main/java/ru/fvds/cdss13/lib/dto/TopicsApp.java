@@ -3,7 +3,11 @@ package ru.fvds.cdss13.lib.dto;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static ru.fvds.cdss13.lib.dto.EventPrefix._RESPONSE;
 
 @Component
 @ConfigurationProperties(prefix = "spring.kafka")
@@ -16,7 +20,9 @@ public class TopicsApp {
     }
 
     public void setConsumers(List<String> consumers) {
-        this.topics = consumers;
+        List<String> suffixResponse = new ArrayList<>(consumers.stream().map(s -> s + _RESPONSE.name()).toList());
+        suffixResponse.addAll(consumers);
+        this.topics = suffixResponse;
     }
 
 }
