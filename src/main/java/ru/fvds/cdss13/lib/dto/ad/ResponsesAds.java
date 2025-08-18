@@ -66,6 +66,14 @@ public class ResponsesAds {
         this.adType = adType;
     }
 
+    public Pageable getPageable() {
+        return pageable;
+    }
+
+    public void setPageable(Pageable pageable) {
+        this.pageable = pageable;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
