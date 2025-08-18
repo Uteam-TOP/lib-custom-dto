@@ -1,8 +1,8 @@
 package ru.fvds.cdss13.lib.dto.ad;
 
 
+import org.springframework.data.domain.Pageable;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 public class ResponsesAds {
