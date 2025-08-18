@@ -6,9 +6,16 @@ import java.util.List;
 
 public class ResponsesAds {
 
+    private Long userId;
+
     private List<AdDto> dtos;
 
     public ResponsesAds(List<AdDto> dtos) {
+        this.dtos = dtos;
+    }
+
+    public ResponsesAds(Long userId, List<AdDto> dtos) {
+        this.userId = userId;
         this.dtos = dtos;
     }
 
@@ -23,6 +30,14 @@ public class ResponsesAds {
         this.dtos = dtos;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -30,11 +45,14 @@ public class ResponsesAds {
 
         ResponsesAds that = (ResponsesAds) o;
 
+        if (!userId.equals(that.userId)) return false;
         return dtos.equals(that.dtos);
     }
 
     @Override
     public int hashCode() {
-        return dtos.hashCode();
+        int result = userId.hashCode();
+        result = 31 * result + dtos.hashCode();
+        return result;
     }
 }
