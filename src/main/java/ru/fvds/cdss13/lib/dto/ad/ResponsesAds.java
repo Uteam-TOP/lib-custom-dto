@@ -8,6 +8,7 @@ import java.util.List;
 public class ResponsesAds {
 
     private Long userId;
+    private AdType adType;
     private Pageable pageable;
 
     private List<AdDto> dtos;
@@ -25,6 +26,12 @@ public class ResponsesAds {
         this.userId = userId;
         this.pageable = pageable;
         this.dtos = dtos;
+    }
+
+    public ResponsesAds(Long userId, AdType adType, Pageable pageable) {
+        this.userId = userId;
+        this.adType = adType;
+        this.pageable = pageable;
     }
 
     public ResponsesAds(Long userId, Pageable pageable) {
@@ -51,6 +58,14 @@ public class ResponsesAds {
         this.userId = userId;
     }
 
+    public AdType getAdType() {
+        return adType;
+    }
+
+    public void setAdType(AdType adType) {
+        this.adType = adType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,21 +74,13 @@ public class ResponsesAds {
         ResponsesAds that = (ResponsesAds) o;
 
         if (!userId.equals(that.userId)) return false;
-        return dtos.equals(that.dtos);
-    }
-
-    public Pageable getPageable() {
-        return pageable;
-    }
-
-    public void setPageable(Pageable pageable) {
-        this.pageable = pageable;
+        return adType == that.adType;
     }
 
     @Override
     public int hashCode() {
         int result = userId.hashCode();
-        result = 31 * result + dtos.hashCode();
+        result = 31 * result + adType.hashCode();
         return result;
     }
 }
