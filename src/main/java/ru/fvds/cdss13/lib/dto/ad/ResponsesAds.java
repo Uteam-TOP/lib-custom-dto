@@ -2,11 +2,13 @@ package ru.fvds.cdss13.lib.dto.ad;
 
 
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 public class ResponsesAds {
 
     private Long userId;
+    private Pageable pageable;
 
     private List<AdDto> dtos;
 
@@ -17,6 +19,17 @@ public class ResponsesAds {
     public ResponsesAds(Long userId, List<AdDto> dtos) {
         this.userId = userId;
         this.dtos = dtos;
+    }
+
+    public ResponsesAds(Long userId, Pageable pageable, List<AdDto> dtos) {
+        this.userId = userId;
+        this.pageable = pageable;
+        this.dtos = dtos;
+    }
+
+    public ResponsesAds(Long userId, Pageable pageable) {
+        this.userId = userId;
+        this.pageable = pageable;
     }
 
     public ResponsesAds() {
@@ -47,6 +60,14 @@ public class ResponsesAds {
 
         if (!userId.equals(that.userId)) return false;
         return dtos.equals(that.dtos);
+    }
+
+    public Pageable getPageable() {
+        return pageable;
+    }
+
+    public void setPageable(Pageable pageable) {
+        this.pageable = pageable;
     }
 
     @Override
