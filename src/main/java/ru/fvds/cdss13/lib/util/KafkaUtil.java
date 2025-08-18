@@ -1,19 +1,14 @@
 package ru.fvds.cdss13.lib.util;
 
-import jakarta.annotation.Nullable;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.header.Header;
 import org.apache.kafka.common.header.Headers;
 import org.apache.kafka.common.header.internals.RecordHeaders;
 import org.springframework.kafka.support.KafkaHeaders;
-import org.springframework.util.StringUtils;
 import ru.fvds.cdss13.lib.dto.Operation;
 
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
 
 
 public class KafkaUtil<Dto> {
@@ -29,7 +24,7 @@ public class KafkaUtil<Dto> {
     private Operation operation;
     private Headers headers;
 
-    private KafkaUtil(ConsumerRecord<String, Dto> consumerRecord) {
+    public KafkaUtil(ConsumerRecord<String, Dto> consumerRecord) {
         this.key = consumerRecord.key();
         this.dto = consumerRecord.value();
         this.topic = consumerRecord.topic();
@@ -38,7 +33,7 @@ public class KafkaUtil<Dto> {
         this.operation = lastHeaderForOperation(consumerRecord.headers(), KEY_HEADER_OPERATION);
     }
 
-    private KafkaUtil(ProducerRecord<String, Dto> producerRecord) {
+    public KafkaUtil(ProducerRecord<String, Dto> producerRecord) {
         this.key = producerRecord.key();
         this.topic = producerRecord.topic();
         this.dto = producerRecord.value();
@@ -49,11 +44,11 @@ public class KafkaUtil<Dto> {
 
 
     private static Operation lastHeaderForOperation(Headers headers, String key){
-        return Operation.valueOf(new String(headers.lastHeader(KEY_HEADER_RECEIVED_TOPIC).value()).intern());
+        return Operation.valueOf(new String(headers.lastHeader(key).value()).intern());
     }
 
     private static String lastHeader(Headers headers, String key){
-        return new String(headers.lastHeader(KEY_HEADER_RECEIVED_TOPIC).value()).intern();
+        return new String(headers.lastHeader(key).value()).intern();
     }
 
     public static Headers createHeaders(Map<String,String> props){
