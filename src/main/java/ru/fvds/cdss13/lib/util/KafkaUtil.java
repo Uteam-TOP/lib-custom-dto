@@ -57,4 +57,87 @@ public class KafkaUtil<Dto> {
         return headers;
     }
 
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public Dto getDto() {
+        return dto;
+    }
+
+    public void setDto(Dto dto) {
+        this.dto = dto;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public String getReceivedTopic() {
+        return receivedTopic;
+    }
+
+    public void setReceivedTopic(String receivedTopic) {
+        this.receivedTopic = receivedTopic;
+    }
+
+    public Operation getOperation() {
+        return operation;
+    }
+
+    public void setOperation(Operation operation) {
+        this.operation = operation;
+    }
+
+    public Headers getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(Headers headers) {
+        this.headers = headers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        KafkaUtil<?> kafkaUtil = (KafkaUtil<?>) o;
+
+        if (!prefix.equals(kafkaUtil.prefix)) return false;
+        if (!key.equals(kafkaUtil.key)) return false;
+        if (!dto.equals(kafkaUtil.dto)) return false;
+        if (!topic.equals(kafkaUtil.topic)) return false;
+        if (!receivedTopic.equals(kafkaUtil.receivedTopic)) return false;
+        if (operation != kafkaUtil.operation) return false;
+        return headers.equals(kafkaUtil.headers);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = prefix.hashCode();
+        result = 31 * result + key.hashCode();
+        result = 31 * result + dto.hashCode();
+        result = 31 * result + topic.hashCode();
+        result = 31 * result + receivedTopic.hashCode();
+        result = 31 * result + operation.hashCode();
+        result = 31 * result + headers.hashCode();
+        return result;
+    }
 }
