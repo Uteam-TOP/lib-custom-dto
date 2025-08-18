@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class KafkaUtil<Dto> {
 
-    private static final String KEY_HEADER_OPERATION = "operation";
+    public static final String KEY_HEADER_OPERATION = "operation";
     private static final String KEY_HEADER_RECEIVED_TOPIC = KafkaHeaders.RECEIVED_TOPIC;
 
     private String prefix;
@@ -140,4 +140,6 @@ public class KafkaUtil<Dto> {
         result = 31 * result + headers.hashCode();
         return result;
     }
+
+
 }
