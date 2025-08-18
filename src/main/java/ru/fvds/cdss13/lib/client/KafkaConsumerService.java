@@ -6,6 +6,8 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.lang.Nullable;
@@ -18,6 +20,8 @@ import java.util.Properties;
 
 @Service
 public class KafkaConsumerService<Dto>{
+
+    private static final Logger logger = LoggerFactory.getLogger(KafkaConsumerService.class);
 
     private final KafkaConsumer<String, Dto> consumer;
 
@@ -52,6 +56,7 @@ public class KafkaConsumerService<Dto>{
                     }
                 }
             }
+            logger.info("send kafka topic {}", producerRecord.topic());
         } catch (Exception e){
             throw new BusinessException("500", "ERROR kafka");
         }

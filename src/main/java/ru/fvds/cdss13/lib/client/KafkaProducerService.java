@@ -6,6 +6,8 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.header.Headers;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import ru.fvds.cdss13.lib.exception.BusinessException;
@@ -15,6 +17,8 @@ import java.util.UUID;
 
 @Service
 public class KafkaProducerService<Dto> {
+
+    private static final Logger logger = LoggerFactory.getLogger(KafkaProducerService.class);
 
     private final KafkaProducer<String, Dto> producer;
     private final KafkaConsumerService<Dto> kafkaConsumerService;
@@ -31,13 +35,13 @@ public class KafkaProducerService<Dto> {
     /**
      * метод используется когда серверу надо отправить сообщение и получить ответ
      * @param dto
-     * @param topis
+     * @param topic
      * @return
      */
-    public ConsumerRecord<String, Dto> sendToResponse(Dto dto, String topis, Headers headers) {
+    public ConsumerRecord<String, Dto> sendToResponse(Dto dto, String topic, Headers headers) {
         String uuid = UUID.randomUUID().toString();
         ProducerRecord<String, Dto> producerRecord = new ProducerRecord<>(
-                topis,
+                topic,
                 null,
                 uuid,
                 dto,
@@ -45,6 +49,7 @@ public class KafkaProducerService<Dto> {
         );
         producer.send(producerRecord);
         ConsumerRecord<String, Dto> result = kafkaConsumerService.pollMessages(producerRecord);
+        logger.info("sendToResponse topic {}", topic);
         if (result == null){
             throw new BusinessException("403", "Not found");
         }

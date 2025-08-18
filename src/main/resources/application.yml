@@ -1,14 +1,6 @@
 spring:
   application:
     name: lib-custom-dto
-  minio:
-    url: ${BASE_URI_MINIO:http://minio:9000}
-    # Minio Bucket name for your application
-    bucket: images
-    # Minio access key (login)
-    access-key: minioadmin
-    # Minio secret key (password)
-    secret-key: minioadmin
   kafka:
     bootstrap-servers: ${URL_KAFKA:kafka:9092}
     security:
@@ -31,25 +23,3 @@ spring:
       - ru.fvds.cdss13.lib.dto.ad.AdDto
       - ru.fvds.cdss13.lib.dto.ad.AdFilterDto
 
-uteam:
-  util_microservice:
-    enabled: true
-    base_uri: http://error_and_log_service:8000
-    base_uri_email: ${BASE_URI_EMAIL:http://smtp-project:2525}
-  error_response:
-    add_stack_trace: false
-  main:
-    domain: 'dev.uteam.top'
-
-root:
-  telegram: ${ROOT_TELEGRAM:'$root'}
-
-telegram:
-  bot:
-    id: ${TELEGRAM_BOT_ID:7659183805}
-    name: ${TELEGRAM_BOT_NAME:auth_uteam_dev_bot}
-    token: ${TELEGRAM_BOT_TOKEN:${telegram.bot.id}:AAECCWpf4gtk8kczGVpJxd2m-pK8_bg-CS4}
-
-
-server:
-  port: 9030

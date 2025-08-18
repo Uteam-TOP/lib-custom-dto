@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.fvds.cdss13.lib"
-version = "0.0.41"
+version = "0.0.42"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -51,6 +51,9 @@ dependencies {
     implementation("org.springframework.kafka:spring-kafka:3.3.8")
     implementation("org.springframework.boot:spring-boot-starter-web:3.4.2")
     implementation("org.projectlombok:lombok:1.18.32")
+    implementation("org.springframework.boot:spring-boot-starter-logging:3.4.2")
+    implementation("org.telegram:telegrambots-client:9.0.0")
+    implementation("org.telegram:telegrambots-longpolling:9.0.0")
 }
 
 
