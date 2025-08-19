@@ -1,8 +1,11 @@
 package ru.fvds.cdss13.lib.dto.city;
 
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeName("cityDto")
 public class CityDto {
     private Long id;
     private String name;
