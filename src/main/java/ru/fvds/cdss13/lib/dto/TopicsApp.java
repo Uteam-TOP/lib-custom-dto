@@ -22,7 +22,7 @@ public class TopicsApp {
 
     public void setConsumers(List<String> consumers) {
         List<String> suffixResponse = new ArrayList<>(consumers.stream().map(s -> s + _RESPONSE.name()).toList());
-        if (suffixResponse.addAll(consumers)){
+        if (suffixResponse.addAll(new ArrayList<>(consumers))){
             this.topics = suffixResponse;
         }
         throw new RuntimeException("Не создались списки топиков");
