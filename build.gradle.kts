@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.fvds.cdss13.lib"
-version = "0.0.63"
+version = "0.0.64"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -55,6 +55,7 @@ dependencies {
     implementation("org.telegram:telegrambots-client:9.0.0")
     implementation("org.telegram:telegrambots-longpolling:9.0.0")
     implementation("org.springframework.data:spring-data-commons:3.4.2")
+    implementation("io.github.resilience4j:resilience4j-retry:2.0.2")
 }
 
 
