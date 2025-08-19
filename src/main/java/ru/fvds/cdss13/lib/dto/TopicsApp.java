@@ -24,8 +24,9 @@ public class TopicsApp {
         List<String> suffixResponse = new ArrayList<>(consumers.stream().map(s -> s + _RESPONSE.name()).toList());
         if (suffixResponse.addAll(new ArrayList<>(consumers))){
             this.topics = suffixResponse;
+        } else {
+            throw new RuntimeException("Не создались списки топиков");
         }
-        throw new RuntimeException("Не создались списки топиков");
 
     }
 
