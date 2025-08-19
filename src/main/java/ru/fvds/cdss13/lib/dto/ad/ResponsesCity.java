@@ -2,10 +2,14 @@ package ru.fvds.cdss13.lib.dto.ad;
 
 
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import ru.fvds.cdss13.lib.dto.city.CityDto;
 
 import java.util.List;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeName("responsesCity")
 public class ResponsesCity {
 
     private List<CityDto> dtos;

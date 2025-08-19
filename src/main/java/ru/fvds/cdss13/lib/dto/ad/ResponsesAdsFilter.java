@@ -1,10 +1,14 @@
 package ru.fvds.cdss13.lib.dto.ad;
 
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeName("responsesAdsFilter")
 public class ResponsesAdsFilter {
 
     private AdFilterDto adFilterDto;

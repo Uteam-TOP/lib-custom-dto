@@ -3,10 +3,14 @@ package ru.fvds.cdss13.lib.dto.ad;
 
 
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import ru.fvds.cdss13.lib.dto.tag.TagDto;
 
 import java.util.List;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeName("responsesTag")
 public class ResponsesTag {
 
     private List<TagDto> dtos;
