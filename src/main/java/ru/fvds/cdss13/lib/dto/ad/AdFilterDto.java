@@ -2,8 +2,6 @@ package ru.fvds.cdss13.lib.dto.ad;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import ru.fvds.cdss13.lib.dto.tag.TagDto;
 import ru.fvds.cdss13.lib.dto.user.EmploymentStatus;
 import ru.fvds.cdss13.lib.dto.user.Gender;
@@ -12,8 +10,7 @@ import ru.fvds.cdss13.lib.dto.user.UserActivityStatus;
 import java.time.OffsetDateTime;
 import java.util.Set;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
-@JsonTypeName("adFilterDto")
+
 public class AdFilterDto {
     private String searchText;
     private Long userId;

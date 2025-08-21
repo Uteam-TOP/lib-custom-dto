@@ -16,8 +16,7 @@ import java.time.OffsetDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
-@JsonTypeName("adDto")
+
 public class AdDto {
 
     private Long id;
