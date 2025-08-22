@@ -2,8 +2,6 @@ package ru.fvds.cdss13.lib.dto.ad;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -52,7 +50,7 @@ public class AdDto {
     private String banReason;
 
     @JsonIgnore
-    private AdType adType;
+    private AdType type;
 
     private ProjectDto projectDto;
 
@@ -164,14 +162,14 @@ public class AdDto {
     }
 
     public AdType getAdType() {
-        return adType;
+        return type;
     }
 
-    public void setAdType(AdType adType) {
-        this.adType = adType;
+    public void setAdType(AdType type) {
+        this.type = type;
     }
 
-    public AdDto(AdType adType) {
-        this.adType = adType;
+    public AdDto(AdType type) {
+        this.type = type;
     }
 }
