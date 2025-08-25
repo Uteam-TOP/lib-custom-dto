@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "ru.fvds.cdss13.lib"
-version = "0.0.72"
+version = "0.0.73"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
