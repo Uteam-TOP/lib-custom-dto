@@ -55,7 +55,7 @@ public class AdDto {
     private ProjectDto projectDto;
 
 
-    public Set<TagDto> getCompetenceLevelTags() {
+    public Set<TagDto> getTags() {
         Set<TagDto> tags = new HashSet<>(skills);
         tags.add(profession);
         tags.addAll(motivations);
