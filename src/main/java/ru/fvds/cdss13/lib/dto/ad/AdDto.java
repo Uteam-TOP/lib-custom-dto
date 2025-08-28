@@ -49,12 +49,12 @@ public class AdDto {
 
     private String banReason;
 
-    @JsonIgnore
+
     private AdType type;
 
     private ProjectDto projectDto;
 
-    @JsonIgnore
+
     public Set<TagDto> getTags() {
         Set<TagDto> tags = new HashSet<>(skills);
         tags.add(profession);

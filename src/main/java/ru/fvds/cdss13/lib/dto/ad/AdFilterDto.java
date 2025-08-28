@@ -28,7 +28,7 @@ public class AdFilterDto {
     private OffsetDateTime creationDateGte;
     private OffsetDateTime creationDateLte;
 
-    @JsonIgnore
+
     public AdType getAdType() {
         throw new RuntimeException("Тип объявления не задан");
     }
