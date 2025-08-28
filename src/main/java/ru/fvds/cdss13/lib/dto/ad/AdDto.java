@@ -161,11 +161,11 @@ public class AdDto {
         this.projectDto = projectDto;
     }
 
-    public AdType getAdType() {
+    public AdType getType() {
         return type;
     }
 
-    public void setAdType(AdType type) {
+    public void setType(AdType type) {
         this.type = type;
     }
 
