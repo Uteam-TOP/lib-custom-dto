@@ -13,7 +13,7 @@ public class NominationDto {
   private String description;
   private String place;
   private HackathonDto hackathon;
-  private TeamDto hackathonTeam;
+  private HackathonProjectDto hackathonProjectDto;
 
   public NominationDto() {
   }
@@ -58,12 +58,12 @@ public class NominationDto {
     this.hackathon = hackathon;
   }
 
-  public TeamDto getHackathonTeam() {
-    return hackathonTeam;
+  public HackathonProjectDto getHackathonProjectDto() {
+    return hackathonProjectDto;
   }
 
-  public void setHackathonTeam(TeamDto hackathonTeam) {
-    this.hackathonTeam = hackathonTeam;
+  public void setHackathonProjectDto(HackathonProjectDto hackathonProjectDto) {
+    this.hackathonProjectDto = hackathonProjectDto;
   }
 }
 

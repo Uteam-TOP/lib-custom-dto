@@ -6,8 +6,8 @@ import java.time.OffsetDateTime;
 public class HackathonTeamMemberDto {
 
     private Long id;
-    private HackathonTeamDto team;
-    private HackathonParticipantDto participant;
+    private HackathonProjectDto hackathonProject;
+    private HackathonUsertDto hackathonUser;
     private OffsetDateTime createdAt;
 
     public HackathonTeamMemberDto() {
@@ -21,20 +21,20 @@ public class HackathonTeamMemberDto {
         this.id = id;
     }
 
-    public HackathonTeamDto getTeam() {
-        return team;
+    public HackathonProjectDto getHackathonProject() {
+        return hackathonProject;
     }
 
-    public void setTeam(HackathonTeamDto team) {
-        this.team = team;
+    public void setHackathonProject(HackathonProjectDto hackathonProject) {
+        this.hackathonProject = hackathonProject;
     }
 
-    public HackathonParticipantDto getParticipant() {
-        return participant;
+    public HackathonUsertDto getHackathonUser() {
+        return hackathonUser;
     }
 
-    public void setParticipant(HackathonParticipantDto participant) {
-        this.participant = participant;
+    public void setHackathonUser(HackathonUsertDto hackathonUser) {
+        this.hackathonUser = hackathonUser;
     }
 
     public OffsetDateTime getCreatedAt() {

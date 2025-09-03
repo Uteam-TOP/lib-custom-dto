@@ -79,9 +79,6 @@ public class HackathonDto {
   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   private @Nullable OffsetDateTime createdAt;
 
-  private @Nullable
-  UserDto creator;
-
   private @Nullable Boolean hasApplied;
 
   /**
@@ -571,24 +568,7 @@ public class HackathonDto {
     this.createdAt = createdAt;
   }
 
-  public HackathonDto creator(UserDto creator) {
-    this.creator = creator;
-    return this;
-  }
 
-  /**
-   * Get creator
-   * @return creator
-   */
-  @Valid 
-  @JsonProperty("creator")
-  public UserDto getCreator() {
-    return creator;
-  }
-
-  public void setCreator(UserDto creator) {
-    this.creator = creator;
-  }
 
   public HackathonDto hasApplied(Boolean hasApplied) {
     this.hasApplied = hasApplied;
@@ -642,13 +622,12 @@ public class HackathonDto {
         Objects.equals(this.teams, hackathonDto.teams) &&
         Objects.equals(this.participants, hackathonDto.participants) &&
         Objects.equals(this.createdAt, hackathonDto.createdAt) &&
-        Objects.equals(this.creator, hackathonDto.creator) &&
         Objects.equals(this.hasApplied, hackathonDto.hasApplied);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, nickname, imageLink, shortDescription, format, startDate, endDate, registrationStartDate, registrationDeadline, registrationSuspended, organizer, focus, targetAudience, participationConditions, prizePool, location, hackathonLink, customLink, telegram, registrationStatus, teams, participants, createdAt, creator, hasApplied);
+    return Objects.hash(id, title, nickname, imageLink, shortDescription, format, startDate, endDate, registrationStartDate, registrationDeadline, registrationSuspended, organizer, focus, targetAudience, participationConditions, prizePool, location, hackathonLink, customLink, telegram, registrationStatus, teams, participants, createdAt, hasApplied);
   }
 
   @Override
@@ -679,7 +658,6 @@ public class HackathonDto {
     sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
     sb.append("    hasApplied: ").append(toIndentedString(hasApplied)).append("\n");
     sb.append("}");
     return sb.toString();
