@@ -9,6 +9,7 @@ public class HackathonTeamMemberDto {
 
     private Long id;
     private HackathonUserRole hackathonUserRole;
+    private Long hackathonId;
     private HackathonProjectDto hackathonProject;
     private UserDto user;
     private OffsetDateTime createdAt;
@@ -54,5 +55,13 @@ public class HackathonTeamMemberDto {
 
     public void setHackathonUserRole(HackathonUserRole hackathonUserRole) {
         this.hackathonUserRole = hackathonUserRole;
+    }
+
+    public Long getHackathonId() {
+        return hackathonId;
+    }
+
+    public void setHackathonId(Long hackathonId) {
+        this.hackathonId = hackathonId;
     }
 }
