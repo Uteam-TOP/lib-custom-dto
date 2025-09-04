@@ -7,6 +7,7 @@ import java.time.OffsetDateTime;
 public class HackathonProjectDto {
 
     private Long id;
+    private HackathonProjectStatus hackathonProjectStatus;
     private HackathonDto hackathon;
     private ProjectDto project;
     private OffsetDateTime createdAt;

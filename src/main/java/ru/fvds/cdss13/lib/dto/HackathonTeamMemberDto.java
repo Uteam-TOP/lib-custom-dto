@@ -1,13 +1,16 @@
 package ru.fvds.cdss13.lib.dto;
 
+import ru.fvds.cdss13.lib.dto.user.UserDto;
+
 import java.time.OffsetDateTime;
 
 
 public class HackathonTeamMemberDto {
 
     private Long id;
+    private HackathonUserRole hackathonUserRole;
     private HackathonProjectDto hackathonProject;
-    private HackathonUsertDto hackathonUser;
+    private UserDto user;
     private OffsetDateTime createdAt;
 
     public HackathonTeamMemberDto() {
@@ -29,12 +32,12 @@ public class HackathonTeamMemberDto {
         this.hackathonProject = hackathonProject;
     }
 
-    public HackathonUsertDto getHackathonUser() {
-        return hackathonUser;
+    public UserDto getUser() {
+        return user;
     }
 
-    public void setHackathonUser(HackathonUsertDto hackathonUser) {
-        this.hackathonUser = hackathonUser;
+    public void setUser(UserDto user) {
+        this.user = user;
     }
 
     public OffsetDateTime getCreatedAt() {
@@ -43,5 +46,13 @@ public class HackathonTeamMemberDto {
 
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public HackathonUserRole getHackathonUserRole() {
+        return hackathonUserRole;
+    }
+
+    public void setHackathonUserRole(HackathonUserRole hackathonUserRole) {
+        this.hackathonUserRole = hackathonUserRole;
     }
 }
