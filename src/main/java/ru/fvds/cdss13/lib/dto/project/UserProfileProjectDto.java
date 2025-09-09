@@ -4,10 +4,25 @@ package ru.fvds.cdss13.lib.dto.project;
 import java.time.OffsetDateTime;
 
 public class UserProfileProjectDto {
-    private Long id;
+    /**
+     * ид проекта
+     */
+    private Long id;//
+    /**
+     * nickname проекта
+     */
     private String nickname;
+    /**
+     * title проекта
+     */
     private String title;
+    /**
+     * ???????????????????
+     */
     private Long userId;
+    /**
+     *
+     */
     private String userProfession;
     private OffsetDateTime createdAt;
     private boolean isOwner;

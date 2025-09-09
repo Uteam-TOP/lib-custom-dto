@@ -70,11 +70,6 @@ public class HackathonDto {
 
   private RegistrationStatus registrationStatus;
 
-  @Valid
-  private List<@Valid TeamDto> teams = new ArrayList<>();
-
-  @Valid
-  private List<@Valid ParticipantDto> participants = new ArrayList<>();
 
   @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   private @Nullable OffsetDateTime createdAt;
@@ -495,64 +490,11 @@ public class HackathonDto {
     this.registrationStatus = registrationStatus;
   }
 
-  public HackathonDto teams(List<@Valid TeamDto> teams) {
-    this.teams = teams;
-    return this;
-  }
 
-  public HackathonDto addTeamsItem(TeamDto teamsItem) {
-    if (this.teams == null) {
-      this.teams = new ArrayList<>();
-    }
-    this.teams.add(teamsItem);
-    return this;
-  }
 
-  /**
-   * Список участвующих команд
-   * @return teams
-   */
-  @Valid 
-  @JsonProperty("teams")
-  public List<@Valid TeamDto> getTeams() {
-    return teams;
-  }
 
-  public void setTeams(List<@Valid TeamDto> teams) {
-    this.teams = teams;
-  }
 
-  public HackathonDto participants(List<@Valid ParticipantDto> participants) {
-    this.participants = participants;
-    return this;
-  }
 
-  public HackathonDto addParticipantsItem(ParticipantDto participantsItem) {
-    if (this.participants == null) {
-      this.participants = new ArrayList<>();
-    }
-    this.participants.add(participantsItem);
-    return this;
-  }
-
-  /**
-   * Список индивидуальных участников
-   * @return participants
-   */
-  @Valid 
-  @JsonProperty("participants")
-  public List<@Valid ParticipantDto> getParticipants() {
-    return participants;
-  }
-
-  public void setParticipants(List<@Valid ParticipantDto> participants) {
-    this.participants = participants;
-  }
-
-  public HackathonDto createdAt(OffsetDateTime createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
 
   /**
    * Дата создания хакатона
@@ -619,15 +561,13 @@ public class HackathonDto {
         Objects.equals(this.customLink, hackathonDto.customLink) &&
         Objects.equals(this.telegram, hackathonDto.telegram) &&
         Objects.equals(this.registrationStatus, hackathonDto.registrationStatus) &&
-        Objects.equals(this.teams, hackathonDto.teams) &&
-        Objects.equals(this.participants, hackathonDto.participants) &&
         Objects.equals(this.createdAt, hackathonDto.createdAt) &&
         Objects.equals(this.hasApplied, hackathonDto.hasApplied);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, nickname, imageLink, shortDescription, format, startDate, endDate, registrationStartDate, registrationDeadline, registrationSuspended, organizer, focus, targetAudience, participationConditions, prizePool, location, hackathonLink, customLink, telegram, registrationStatus, teams, participants, createdAt, hasApplied);
+    return Objects.hash(id, title, nickname, imageLink, shortDescription, format, startDate, endDate, registrationStartDate, registrationDeadline, registrationSuspended, organizer, focus, targetAudience, participationConditions, prizePool, location, hackathonLink, customLink, telegram, registrationStatus, createdAt, hasApplied);
   }
 
   @Override
@@ -655,8 +595,6 @@ public class HackathonDto {
     sb.append("    customLink: ").append(toIndentedString(customLink)).append("\n");
     sb.append("    telegram: ").append(toIndentedString(telegram)).append("\n");
     sb.append("    registrationStatus: ").append(toIndentedString(registrationStatus)).append("\n");
-    sb.append("    teams: ").append(toIndentedString(teams)).append("\n");
-    sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    hasApplied: ").append(toIndentedString(hasApplied)).append("\n");
     sb.append("}");
