@@ -135,9 +135,7 @@ public class UserDto {
     }
 
     public void setDateOfRegistration(OffsetDateTime dateOfRegistration) {
-        if (id == null){
             this.dateOfRegistration = dateOfRegistration;
-        }
     }
 
     public CityDto getCityEntityOfResidence() {
