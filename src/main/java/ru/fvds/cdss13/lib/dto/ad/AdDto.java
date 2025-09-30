@@ -54,6 +54,8 @@ public class AdDto {
 
     private ProjectDto projectDto;
 
+    private EmploymentType employment;
+
 
     public Set<TagDto> getTags() {
         Set<TagDto> tags = new HashSet<>(skills);
@@ -171,5 +173,13 @@ public class AdDto {
 
     public AdDto(AdType type) {
         this.type = type;
+    }
+
+    public EmploymentType getEmployment() {
+        return employment;
+    }
+
+    public void setEmployment(EmploymentType employment) {
+        this.employment = employment;
     }
 }
