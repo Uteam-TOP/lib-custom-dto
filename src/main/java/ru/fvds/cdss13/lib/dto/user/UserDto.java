@@ -40,7 +40,7 @@ public class UserDto {
 
     private String nickname;
 
-    @Pattern(regexp = "^\\$.*")
+//    @Pattern(regexp = "^\\$.*")
     private String telegram;
 
     private boolean hideTelegram;
