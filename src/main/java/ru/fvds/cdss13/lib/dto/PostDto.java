@@ -16,8 +16,17 @@ public class PostDto {
     private OffsetDateTime updatedAt;
     private ProjectDto project;
     private UserDto author;
+    private int likesCount;
 
     public PostDto() {
+    }
+
+    public int getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(int likesCount) {
+        this.likesCount = likesCount;
     }
 
     public Long getId() {
