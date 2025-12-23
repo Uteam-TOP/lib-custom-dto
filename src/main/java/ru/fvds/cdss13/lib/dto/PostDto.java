@@ -17,8 +17,17 @@ public class PostDto {
     private ProjectDto project;
     private UserDto author;
     private int likesCount;
+    private int dislikesCount;
 
     public PostDto() {
+    }
+
+    public int getDislikesCount() {
+        return dislikesCount;
+    }
+
+    public void setDislikesCount(int dislikesCount) {
+        this.dislikesCount = dislikesCount;
     }
 
     public int getLikesCount() {
