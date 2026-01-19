@@ -25,17 +25,7 @@ public class TagDto {
 
     private String color;
 
-    private Set<UserDto> users;
-
     public TagDto() {
-    }
-
-    public Set<UserDto> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set<UserDto> users) {
-        this.users = users;
     }
 
     public Long getId() {
