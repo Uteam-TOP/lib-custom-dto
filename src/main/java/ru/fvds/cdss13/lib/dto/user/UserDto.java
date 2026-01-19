@@ -6,8 +6,10 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import ru.fvds.cdss13.lib.dto.city.CityDto;
+import ru.fvds.cdss13.lib.dto.tag.TagDto;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 
 public class UserDto {
@@ -63,7 +65,17 @@ public class UserDto {
 
     private UserActivityStatus activityStatus;
 
+    private Set<TagDto> userSkills;
+
     public UserDto() {
+    }
+
+    public Set<TagDto> getUserSkills() {
+        return userSkills;
+    }
+
+    public void setUserSkills(Set<TagDto> userSkills) {
+        this.userSkills = userSkills;
     }
 
     public Long getId() {

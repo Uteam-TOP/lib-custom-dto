@@ -3,6 +3,10 @@ package ru.fvds.cdss13.lib.dto.tag;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import ru.fvds.cdss13.lib.dto.user.UserDto;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class TagDto {
@@ -21,7 +25,17 @@ public class TagDto {
 
     private String color;
 
+    private Set<UserDto> users;
+
     public TagDto() {
+    }
+
+    public Set<UserDto> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<UserDto> users) {
+        this.users = users;
     }
 
     public Long getId() {
