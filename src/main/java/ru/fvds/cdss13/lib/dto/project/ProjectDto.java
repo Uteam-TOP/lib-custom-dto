@@ -7,11 +7,13 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import ru.fvds.cdss13.lib.dto.ad.AdDto;
 import ru.fvds.cdss13.lib.dto.city.CityDto;
+import ru.fvds.cdss13.lib.dto.tag.TagDto;
 import ru.fvds.cdss13.lib.dto.teammember.TeamMemberDto;
 import ru.fvds.cdss13.lib.dto.user.UserDto;
 
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Set;
 
 
 public class ProjectDto {
@@ -71,7 +73,17 @@ public class ProjectDto {
     @Valid
     private CityDto city;
 
+    private Set<TagDto> stack;
+
     public ProjectDto() {
+    }
+
+    public Set<TagDto> getStack() {
+        return stack;
+    }
+
+    public void setStack(Set<TagDto> stack) {
+        this.stack = stack;
     }
 
     public Long getId() {
