@@ -66,7 +66,17 @@ public class UserDto {
 
     private Set<TagDto> userSkills;
 
+    private String token;
+
     public UserDto() {
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public Set<TagDto> getUserSkills() {
