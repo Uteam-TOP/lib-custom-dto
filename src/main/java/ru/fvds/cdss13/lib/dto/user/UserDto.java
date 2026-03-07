@@ -3,7 +3,6 @@ package ru.fvds.cdss13.lib.dto.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import ru.fvds.cdss13.lib.dto.city.CityDto;
 import ru.fvds.cdss13.lib.dto.tag.TagDto;
@@ -52,8 +51,8 @@ public class UserDto {
 
     private boolean hideEmail;
     private boolean verifiedEmail;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private UserRole role;
+
+    private Set<UserRoleDto> roles;
 
     @Size(max = 200)
     private String imageLink;
@@ -214,12 +213,12 @@ public class UserDto {
         this.verifiedEmail = verifiedEmail;
     }
 
-    public UserRole getRole() {
-        return role;
+    public Set<UserRoleDto> getRoles() {
+        return roles;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setRoles(Set<UserRoleDto> roles) {
+        this.roles = roles;
     }
 
     public String getImageLink() {
