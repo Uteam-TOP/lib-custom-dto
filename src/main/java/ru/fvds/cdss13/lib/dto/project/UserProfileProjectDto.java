@@ -26,8 +26,17 @@ public class UserProfileProjectDto {
     private String userProfession;
     private OffsetDateTime createdAt;
     private boolean isOwner;
+    private String avatarLink;
 
     public UserProfileProjectDto() {
+    }
+
+    public String getAvatarLink() {
+        return avatarLink;
+    }
+
+    public void setAvatarLink(String avatarLink) {
+        this.avatarLink = avatarLink;
     }
 
     public Long getId() {
