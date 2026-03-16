@@ -18,6 +18,14 @@ public class HackathonProjectDto {
     public HackathonProjectDto() {
     }
 
+    public HackathonProjectStatus getHackathonProjectStatus() {
+        return hackathonProjectStatus;
+    }
+
+    public void setHackathonProjectStatus(HackathonProjectStatus hackathonProjectStatus) {
+        this.hackathonProjectStatus = hackathonProjectStatus;
+    }
+
     public Long getId() {
         return id;
     }
