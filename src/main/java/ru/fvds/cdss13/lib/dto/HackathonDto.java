@@ -48,6 +48,15 @@ public class HackathonDto {
   private RegistrationStatus registrationStatus;
   private CityDto city;
   private OffsetDateTime createdAt;
+  private String hackathonLogo;
+
+  public String getHackathonLogo() {
+    return hackathonLogo;
+  }
+
+  public void setHackathonLogo(String hackathonLogo) {
+    this.hackathonLogo = hackathonLogo;
+  }
 
   public HackathonDto() {
   }
