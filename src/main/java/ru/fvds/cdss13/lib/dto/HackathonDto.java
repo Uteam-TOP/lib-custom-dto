@@ -1,23 +1,11 @@
 package ru.fvds.cdss13.lib.dto;
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.lang.Nullable;
+
 import ru.fvds.cdss13.lib.dto.city.CityDto;
-import ru.fvds.cdss13.lib.dto.user.UserDto;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+
 
 /**
  * HackathonDto
@@ -49,6 +37,15 @@ public class HackathonDto {
   private CityDto city;
   private OffsetDateTime createdAt;
   private String hackathonLogo;
+  private Long userId;
+
+  public Long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(Long userId) {
+    this.userId = userId;
+  }
 
   public String getHackathonLogo() {
     return hackathonLogo;
