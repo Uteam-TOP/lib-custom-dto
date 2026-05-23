@@ -14,8 +14,17 @@ public class NominationDto {
   private String place;
   private HackathonDto hackathon;
   private HackathonProjectDto hackathonProjectDto;
+  private Long achievementId;
 
   public NominationDto() {
+  }
+
+  public Long getAchievementId() {
+    return achievementId;
+  }
+
+  public void setAchievementId(Long achievementId) {
+    this.achievementId = achievementId;
   }
 
   public Long getId() {
